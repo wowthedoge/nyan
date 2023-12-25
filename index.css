@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('background.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    /* Optional: to cover the entire background */
+}
+
+.cat-container {
+    position: relative;
+}
+
+#cat1,
+#cat2 {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    /* You can adjust the top and left properties to control the overlap */
+}
+
+#cat1 {}
+
+#cat2 {
+    display: none;
+}
+
+#rainbow {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    /* Position the left edge of the rainbow at the center of the screen */
+    bottom: 40%;
+    /* Adjust as needed to position at the back of the cat */
+    width: 50vw;
+    /* Set to 50% of the viewport width */
+    height: 100px;
+    /* Adjust the height as needed */
+    background: url('path_to_rainbow_image.png') no-repeat;
+    background-size: cover;
+    clip-path: inset(0 0 0 50vw);
+    /* Initially clip everything to the left of the middle */
+    animation: revealRainbow 2s forwards;
+    /* Animation name, duration, and fill mode */
+}
+
+
+
+@keyframes revealRainbow {
+    to {
+        clip-path: inset(0 0 0 0);
+        /* Reveal the entire image */
+    }
+}
+
+h1 {
+    font-family: 'Silkscreen', sans-serif;
+    margin-top: -35vh;
+    font-size: 2rem;
+    color: white;
+}
+
+#bigtext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
